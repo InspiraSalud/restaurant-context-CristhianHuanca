@@ -1,0 +1,39 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Restaurante El Buen Sabor",
+      "address": "Avenida Central 123, Ciudad X",
+      "cuisineType": "Comida Tradicional",
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "name": "Pizzería Italiana Bella",
+      "address": "Calle Roma 456, Ciudad Y",
+      "cuisineType": "Italiana",
+      "rating": 4.3
+    },
+    {
+      "name": "GatoFood",
+      "address": "Av. la marina",
+      "cuisineType": "veteriFoot",
+      "rating": 2,
+      "id": 3
+    },
+    {
+      "name": "ChatRoom_id",
+      "address": "dfdfdf",
+      "cuisineType": "Cafetería",
+      "rating": 67,
+      "id": 4
+    },
+    {
+      "name": "dfdf",
+      "address": "dfdf",
+      "cuisineType": "dfdf",
+      "rating": 56,
+      "id": 5
+    }
+  ]
+}

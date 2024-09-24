@@ -1,0 +1,26 @@
+{
+  "filter": {
+    "label": "Filter",
+    "placeholder": "Enter text to filter"
+  },
+  "title": {
+    "restaurant": "Restaurants",
+    "add": "New restaurant",
+    "edit": "Edit restaurant"
+  },
+  "place": {
+    "id": "No.",
+    "name": "Name",
+    "address": "Address",
+    "cuisineType": "Cuisine",
+    "rating": "Rating",
+    "actions": "Actions"
+
+  },
+  "footer": {
+    "rights": "Copyright © 2024 {{ api }}, All rights reserved",
+    "intro": "Developed ",
+    "author": "by {{ team }} Team"
+  }
+}
+

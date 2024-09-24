@@ -1,0 +1,26 @@
+{
+  "filter": {
+    "label": "Filtrar",
+    "placeholder": "Digite texto a filtrar"
+  },
+  "title": {
+    "restaurant": "Restaurantes",
+    "add": "Nuevo restaurante",
+    "edit": "Editar restaurante"
+  },
+  "place": {
+    "id": "No.",
+    "name": "Nombre",
+    "address": "Direccion",
+    "cuisineType": "Procedencia",
+    "rating": "Popularidad",
+    "actions": "Acciones"
+
+  },
+  "footer": {
+    "rights": "Derechos de autor © 2024 {{ api }}, Todos los derechos reservados",
+    "intro": "Desarrollado ",
+    "author": "por el Equipo {{ team }}"
+  }
+}
+

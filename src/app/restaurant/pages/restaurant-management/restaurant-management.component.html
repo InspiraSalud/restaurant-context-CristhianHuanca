@@ -1,0 +1,74 @@
+<!-- Student catalogue -->
+<div class="table-wrapper">
+  <h2>{{ 'title.restaurant' | translate }}</h2>
+
+  <div class="search-wrapper">
+    <mat-form-field>
+      <input matInput placeholder="Search Restaurant" [(ngModel)]="searchTerm" (ngModelChange)="searchPlaces()">
+    </mat-form-field>
+  </div>
+
+  <!--Add/Edit Form-->
+  <app-restaurant-create-and-edit (editCanceled)="onCancelEdit()"
+                               (PlaceAdded)="onPlaceAdded($event)"
+                               (PlaceUpdated)="onPlaceUpdated($event)"
+                               [editMode] = "isEditMode"
+                               [place]="placeData"/>
+
+
+  <div class="sort-options">
+    <button mat-button (click)="sortPlaces('id')">Ordenar por ID</button>
+    <button mat-button (click)="sortPlaces('name')">Ordenar alfabéticamente por Nombre</button>
+  </div>
+
+  <!-- Data Table -->
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+         matSort matSortActive="name" matSortDirection="asc">
+
+    <ng-container matColumnDef="id">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'place.id' | translate }} </th>
+      <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'place.name' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'place.address' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.address }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="cuisineType">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'place.cuisineType' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.cuisineType }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="rating">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'place.rating' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>{{ element.rating }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell> {{ 'place.actions' | translate }}</th>
+      <td *matCellDef="let element" mat-cell>
+        <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+        <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': placeData.id === row.id }" mat-row></tr>
+
+  </table>
+  <!-- Paginator child component-->
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
+
+
+
+
+
+

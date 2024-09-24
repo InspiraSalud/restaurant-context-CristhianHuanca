@@ -1,0 +1,34 @@
+<!-- Create and Edit Form -->
+<h4>{{ 'title.add' | translate }}</h4>
+<div class="form-section">
+
+  <form (submit)="onSubmit()" #PlaceForm='ngForm' class="form-row">
+
+    <mat-form-field>
+    <input matInput placeholder="Name" name="name" required [(ngModel)]="place.name">
+  </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Address" name="address" required [(ngModel)]="place.address">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="CuisineType" name="cuisineType" required [(ngModel)]="place.cuisineType">
+    </mat-form-field>
+
+    <mat-form-field id="age-form-field">
+      <input matInput type="number" placeholder="Raiting" name="raiting" required [(ngModel)]="place.rating">
+    </mat-form-field>
+
+    <ng-container>
+      @if (editMode === true) {
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      }
+      @else {
+        <button mat-raised-button color="primary">Add</button>
+      }
+    </ng-container>
+  </form>
+
+</div>
